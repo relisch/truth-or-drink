@@ -1,0 +1,47 @@
+#playerButtons, 
+#btnGo,
+#playersHeading,
+#question,
+#addQuestionButtons,
+#btnSubmitQuestions
+{
+	margin-top: 10px;
+	text-align: center;
+}
+
+#players,
+#addQuestions
+{
+	margin: auto;
+	text-align: center;
+}
+
+#people,
+#question,
+#list 
+{
+	margin: auto;
+}
+
+#question,
+#list
+{
+	display: none;
+	margin-bottom: 20px;
+}
+
+#questionSpacer,
+#listSpacer
+{
+	clear: both;
+}
+
+.playerField,
+.questionField
+{
+	padding-right: 20px;
+}
+
+.lightbox {
+	display: none;
+}
