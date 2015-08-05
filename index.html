@@ -25,14 +25,13 @@
 			<p>Truth or drink is a simple game. Just add the names of all participants below, and off you go! Choose 
 				someone to go first and once they press the button, they have to ask the specified person the question
 				on the screen. If they do not want to answer or do the dare, they must take a shot.</p>
-				<p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="showQuestions()">View all Questions <span id="questionCount" class="badge"></span></a></p>
-				<p><a class="btn btn-primary btn-lg" href="#" role="button" data-featherlight="#questionBox">Add Questions</a></p>
+				<p><a class="btn btn-primary btn-lg" href="#" role="button" id="btnShowQuestions">View all Questions <span id="questionCount" class="badge"></span></a></p>
 		</div>
 
 		<div class="col-md-4"></div>
 		<div id="people" class="col-md-4">
 			<!-- List of inputs with add and submit button, hides on submit-->
-			<h2 id="playersHeading">Players</h2>
+			<h2 id="playersHeading" class="centered">Players</h2>
 				<div id="players">
 					<input type="text" class="playerField form-control" placeholder="Player Name">
 					<input type="text" class="playerField form-control" placeholder="Player Name">
@@ -41,16 +40,40 @@
 					<input type="text" class="playerField form-control" placeholder="Player Name">
 				</div>
 				
-				<div id="playerButtons">
+				<div id="playerButtons" class="centered">
 					<button type="button" class="btn btn-default" id="btnAddPlayerField">Add</button>
 					<button type="button" class="btn btn-default" id="btnRemovePlayerField">Remove</button>
 					<br />
-					<button type="button" class="btn btn-primary btn-lg" id="btnGo">GO!</button>
+					<button type="button" class="btn btn-primary btn-lg centered" id="btnGo">GO!</button>
 				</div>
 		</div>
 
 		<div id="lightboxes">
-			<div class="lightbox" id="peopleBox"></div>
+			<div class="lightbox" id="addPlayersBox">
+				<h2>Players to be added</h2>
+				<div id="addPlayers">
+					<input type="text" class="lbPlayerField form-control" placeholder="Player Name">
+					<input type="text" class="lbPlayerField form-control" placeholder="Player Name">
+					<input type="text" class="lbPlayerField form-control" placeholder="Player Name">
+					<input type="text" class="lbPlayerField form-control" placeholder="Player Name">
+					<input type="text" class="lbPlayerField form-control" placeholder="Player Name">
+				</div>
+
+				<div id="addPlayerButtons" class="centered">
+					<button type="button" class="btn btn-primary btn-lg centered" id="btnSubmitAddPlayers">Submit</button>
+				</div>
+			</div>
+
+			<div class="lightbox" id="removePlayersBox">
+				<div id="removePlayers" >
+					<h2>Players to be Removed</h2>
+					<ul class="list-group" id="removePlayerList"></ul>
+					<div id="removePlayerButtons" class="centered">
+					<button type="button" class="btn btn-primary btn-lg centered" id="btnSubmitRemovePlayers">Submit</button>
+				</div>
+				</div>
+			</div>
+
 			<div class="lightbox" id="questionBox">
 				<h2>Questions to be added</h2>
 				<div id="addQuestions">
@@ -61,24 +84,28 @@
 					<input type="text" class="questionField form-control" placeholder="Question">
 				</div>
 
-				<div id="addQuestionButtons">
-					<button type="button" class="btn btn-primary btn-lg" id="btnSubmitQuestions">Submit</button>
+				<div id="addQuestionButtons" class="centered">
+					<button type="button" class="btn btn-primary btn-lg centered" id="btnSubmitQuestions">Submit</button>
 				</div>
 			</div>
 		</div>
-		<!-- <div class="col-md-4"></div> -->
 
 		<div id="questionSpacer" class="col-md-3"></div>
-		<div id="question" class="col-md-6">
+		<div id="question" class="col-md-6 centered hide">
 			<!-- Question in like an h2 with their name above it or something with a next button and shot button-->
 			<h2 id="questionText">Name, THIS IS THE QUESTION</h2>
 			<button type="button" class="btn btn-primary btn-lg" onclick="next()">Truth</button>
 			<button type="button" class="btn btn-default btn-lg" onclick="drink()">Drink</button>
+			<br />
 		</div>
 
 		<div id="listSpacer" class="col-md-3"></div>
-		<div id="list" class="col-md-6"></div>
-		
+		<div id="list" class="col-md-6 hide"></div>
+		<div id="addButtonGroup">
+			<button type="button" class="btn btn-primary btn-lg hide" id="btnAddPlayers" data-featherlight="#addPlayersBox">Add Players</button>
+			<button type="button" class="btn btn-primary btn-lg hide" id="btnRemovePlayers" data-featherlight="#removePlayersBox">Remove Players</button>
+			<button type="button" class="btn btn-primary btn-lg" data-featherlight="#questionBox">Add Question</button>
+		</div>
 	</div>
 </body>
 </html>
