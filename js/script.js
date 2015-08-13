@@ -5,6 +5,7 @@
 var players = new Array(), count = 0, gameStarted = false;
 
 $(document).ready(function() {
+	checkList();
 	$('#questionCount').text(questions.length + 1);
 
 	// Initial player creation listeners
@@ -186,4 +187,18 @@ function removePlayers() {
 	updateRemovePlayers();
 	var current = $.featherlight.current()
 	current.close();
+}
+
+function checkList() {
+	var repeats = new Array();
+	for(var i = 0; i < questions.length; i++) {
+		var temp = questions[i];
+		console.log('checking question ' + i);
+		for(var j = 0; j < questions.length; j++) {
+			if(temp == questions[j] && i != j && repeats.indexOf(j) == -1) {
+				alert("Question " + j + ": "+ questions[j]+" is a repeat of question " + i + " " + questions[i]);
+				repeats.push(i);
+			}
+		}
+	}
 }

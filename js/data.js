@@ -107,7 +107,6 @@ var questions = ['the average frequency of sex for couples is about eight times 
 'what is your least favorite thing about me?',
 'carry me around the room once.  To get out of it (for either of you) take a shot.',
 'who do you think has the best hair in the room?',
-'how long have you gone without showering?',
 'how many people have you made out with?',
 'if you had to marry someone tomorrow, who would you pick and why?',
 'what’s your middle name?',
