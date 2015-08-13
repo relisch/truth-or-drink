@@ -13,7 +13,8 @@
 	margin: auto;
 }
 
-#question
+#question,
+#list
 {
 	margin-bottom: 20px;
 }

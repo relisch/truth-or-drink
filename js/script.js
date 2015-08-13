@@ -107,11 +107,6 @@ function next() {
 		count = 0;
 		startGame();
 	}
-	if((Math.random() * 1,000) + 1 == 666) {
-		var name = getName();
-		$('#questionText').text(name + ', ' + "Strip to your underwear or take 4 shots.");
-		return;
-	}
 	var name = getName();
 	$('#questionText').text(name + ', ' + questions[count]);
 	count++;
