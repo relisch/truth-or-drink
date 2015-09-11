@@ -153,7 +153,7 @@ var questions = ['the average frequency of sex for couples is about eight times 
 'go around the room and guess how many people each person has slept with?',
 'who have you had the best sex with and what made it so great?',
 'would you have sex with an ex again and if so, who and why?',
-'go around the room and point to the one person you’d marry, have sex with, and shank',
+'go around the room and point to the one person you’d marry, have sex with, and kill',
 'what’s the most times you’ve masturbated in a day?',
 'who here do you think has the best boobs?',
 'have you ever given anyone a lapdance?',

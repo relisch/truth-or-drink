@@ -1,9 +1,10 @@
 /*	
-	Should be complete.
+	WORKING VERSION
 */
 
-var players = new Array(), count = 0, gameStarted = false;
+var players = new Array(), count = 0, playerCount = 0, gameStarted = false;
 
+// Set listeners 
 $(document).ready(function() {
 	checkList();
 	$('#questionCount').text(questions.length + 1);
@@ -58,18 +59,12 @@ function populateNames() {
 
 // Change UI to show question screen
 function startGame() {
-	$('#people').hide();
+	$('#people').addClass('hide');
 	$('.col-md-4').hide();
 	populateNames();
 	updateRemovePlayers();
 
-	// Shuffle the array of questions so we can iterate through
-	for (var i = questions.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = questions[i];
-        questions[i] = questions[j];
-        questions[j] = temp;
-    }
+	shuffleArray(questions);
     gameStarted = true;
 
     $('#question').removeClass('hide');
@@ -101,21 +96,41 @@ function getName() {
 	return name;
 }
 
-// Get the next question from the list and pick another person to answer it
+// Mix up an array (param)
+function shuffleArray(array) {
+	// Shuffle the array of questions so we can iterate through
+	for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+// Get the next question from the list and choose another person to answer it based on the round robin
 function next() {
-	$('#list').hide();
+	$('#list').addClass('hide');
+
 	if(count == questions.length) {
 		count = 0;
 		startGame();
 	}
-	var name = getName();
+	
+	if(playerCount == (players.length) || count == 0) {
+		shuffleArray(players);
+		playerCount = 0;
+	}
+	
+	var name = players[playerCount];
 	$('#questionText').text(name + ', ' + questions[count]);
 	count++;
+	playerCount++;
 }
 
 // Add this question to the list at a later point that's at least one full rotation in the future
 function drink() {
-	$('#list').hide();
+	$('#list').addClass('hide');
 	var index = 0;
 	while(index <= count + players.length) {
 		index = Math.floor(Math.random() * questions.length);
@@ -159,6 +174,7 @@ function addQuestions() {
 	current.close();
 }
 
+// Add one or more players to the game
 function addPlayers() {
 	$('.lbPlayerField').each(function() {
 		if($(this).val()) {
@@ -168,9 +184,11 @@ function addPlayers() {
 	});
 	updateRemovePlayers();
 	var current = $.featherlight.current()
+
 	current.close();
 }
 
+// Update the "remove players" lightbox
 function updateRemovePlayers() {
 	$('#removePlayerList').html('');
 	$(players).each(function(i, val) {
@@ -178,17 +196,25 @@ function updateRemovePlayers() {
 	})
 }
 
+// remove one or more players from the game
 function removePlayers() {
 	$('#removePlayerList > li > span > input:checked').each(function() {
-		players.splice($(this).val(), 1);
-		console.log(players[$(this).val()]);
+		var remName = $('#removePlayerList > li:eq(' + $(this).val() + ')').text();
+		console.log('name: ' + remName);
+		var index = players.indexOf(remName);
+		players.splice(index, 1);
 	});
 
 	updateRemovePlayers();
 	var current = $.featherlight.current()
 	current.close();
+
+	// Reset the players and go to the next question
+	count = 0; 
+	next();
 }
 
+// check the question list to make sure there weren't any input errors (duplicate questions)
 function checkList() {
 	var repeats = new Array();
 	for(var i = 0; i < questions.length; i++) {
@@ -200,5 +226,8 @@ function checkList() {
 				repeats.push(i);
 			}
 		}
+	}
+	if(repeats.length == 0) {
+		console.log('No duplicate questions!');
 	}
 }
