@@ -117,8 +117,15 @@ function next() {
 		startGame();
 	}
 	
+	// Reshuffle the array and make sure that the last person that went in the last round is not the 
+	// first person in the new round. 
 	if(playerCount == (players.length) || count == 0) {
-		shuffleArray(players);
+		var lastPlayer = players[players.length -1];
+		var cont = true;
+		while(cont) {
+			shuffleArray(players);
+			players[0] == lastPlayer ? cont = true : cont = false;
+		}
 		playerCount = 0;
 	}
 	
