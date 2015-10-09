@@ -1,4 +1,6 @@
-
+body {
+	font-family: 'Roboto', sans-serif;
+}
 #players,
 #addQuestions
 {
@@ -19,16 +21,75 @@
 	margin-bottom: 20px;
 }
 
+#question 
+{
+	margin-top: 50px;
+}
+
 #questionSpacer,
 #listSpacer
 {
 	clear: both;
 }
 
+#people {
+	margin-top: 20px;
+}
 #addButtonGroup {
 	position: absolute;
-	bottom:20px;
-	right: 30px;
+	bottom: 63px;
+	right: 80px;
+}
+
+
+#btnCollapseUp {
+	position: absolute;
+	right: 20px;
+}
+
+#btnCollapseDown {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+
+#btnAddPlayerField,
+#btnRemovePlayerField {
+	font-weight: 700;
+	font-size: 15;
+}
+
+#titleJumbo {
+	position: relative;
+}
+
+#titleCompact {
+	display: none;
+	background-color: #eee;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+}
+
+#titleCompact h1 {
+	font-size: 54px;
+}
+
+#playersHeading {
+	font-weight: 700;
+}
+
+#question button {
+	font-weight: 700;
+	margin-top: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top:15px;
+	padding-bottom: 15px;
+}
+
+#question button:first-of-type {
+	margin-right: 100px;
 }
 
 .playerField,
@@ -39,6 +100,10 @@
 
 .lightbox {
 	display: none;
+}
+
+.bangers {
+	font-family: "Bangers" cursive;
 }
 
 .centered {

@@ -1,4 +1,4 @@
-<!-- This website is intended for recreational purposes only and is not well made. Please don"t break it. It"s not hard. -->
+<!-- This website is intended for recreational purposes only and is not well made. Please don"t break it. It's not hard. -->
 <!-- Created by Tyler Ashlin 6/14/15 -->
 
 <!DOCTYPE html>
@@ -12,20 +12,39 @@
     <script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/featherlight.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+	
     
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron">
-			<h1>Truth or Drink</h1>
-			<p>Truth or drink is a simple game. Just add the names of all participants below, and off you go! Choose 
+		<div id="titleCompact">
+			<h1 class="bangers">Truth or Drink</h1>
+			<button type="button" class="btn btn-default" id="btnCollapseDown" onclick="showJumbo()">
+					<span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+				</button>
+		</div>
+		<div class="jumbotron" id="titleJumbo">
+			<h1 class="bangers">Truth or Drink</h1>
+			<p><span class="bangers">Truth or Drink</span> is a simple game. Just add the names of all participants below, and off you go! Choose 
 				someone to go first and once they press the button, they have to ask the specified person the question
 				on the screen. If they do not want to answer or do the dare, they must take a shot.</p>
 				<p><a class="btn btn-primary btn-lg" href="#" role="button" id="btnShowQuestions">View all Questions <span id="questionCount" class="badge"></span></a></p>
+
+				<div id="addButtonGroup">
+					<button type="button" class="btn btn-primary btn-lg hide" id="btnAddPlayers" data-featherlight="#addPlayersBox">Add Players</button>
+					<button type="button" class="btn btn-primary btn-lg hide" id="btnRemovePlayers" data-featherlight="#removePlayersBox">Remove Players</button>
+					<button type="button" class="btn btn-primary btn-lg" data-featherlight="#questionBox">Add Question</button>
+				</div>
+
+				<button type="button" class="btn btn-default" id="btnCollapseUp" onclick="hideJumbo()">
+					<span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
+				</button>
 		</div>
 
 		<div class="col-md-4"></div>
@@ -101,11 +120,7 @@
 
 		<div id="listSpacer" class="col-md-3"></div>
 		<div id="list" class="col-md-6 hide"></div>
-		<div id="addButtonGroup">
-			<button type="button" class="btn btn-primary btn-lg hide" id="btnAddPlayers" data-featherlight="#addPlayersBox">Add Players</button>
-			<button type="button" class="btn btn-primary btn-lg hide" id="btnRemovePlayers" data-featherlight="#removePlayersBox">Remove Players</button>
-			<button type="button" class="btn btn-primary btn-lg" data-featherlight="#questionBox">Add Question</button>
-		</div>
+		
 	</div>
 </body>
 </html>

@@ -207,7 +207,6 @@ function updateRemovePlayers() {
 function removePlayers() {
 	$('#removePlayerList > li > span > input:checked').each(function() {
 		var remName = $('#removePlayerList > li:eq(' + $(this).val() + ')').text();
-		console.log('name: ' + remName);
 		var index = players.indexOf(remName);
 		players.splice(index, 1);
 	});
@@ -217,7 +216,7 @@ function removePlayers() {
 	current.close();
 
 	// Reset the players and go to the next question
-	count = 0; 
+	playerCount = players.length; 
 	next();
 }
 
@@ -237,4 +236,14 @@ function checkList() {
 	if(repeats.length == 0) {
 		console.log('No duplicate questions!');
 	}
+}
+
+function hideJumbo() {
+	$('#titleJumbo').slideUp();
+	$('#titleCompact').slideDown();
+}
+
+function showJumbo() {
+	$('#titleCompact').slideUp();
+	$('#titleJumbo').slideDown();
 }
