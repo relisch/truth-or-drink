@@ -2,12 +2,12 @@
 	WORKING VERSION
 */
 
-var players = new Array(), count = 0, playerCount = 0, gameStarted = false;
+var players = new Array(), displayQuestions = questions.slice(0), count = 0, playerCount = 0, gameStarted = false;
 
 // Set listeners 
 $(document).ready(function() {
 	checkList();
-	$('#questionCount').text(questions.length + 1);
+	$('#questionCount').text(displayQuestions.length + 1);
 
 	// Initial player creation listeners
 	$('#btnAddPlayerField').on('click', function(){
@@ -150,8 +150,8 @@ function drink() {
 function showQuestions() {
 	$('#list').html('<h2>All Questions</h2>');
 	$('<ul class="list-group">').appendTo($('#list'));
-	for(var i = 0; i < questions.length; i++) {
-		$('<li class="list-group-item">'+ questions[i] +'</li>').appendTo($('#list'));
+	for(var i = 0; i < displayQuestions.length; i++) {
+		$('<li class="list-group-item">'+ displayQuestions[i] +'</li>').appendTo($('#list'));
 	}
 	$('</ul>').appendTo($('#list'));
 	$('#list').removeClass('hide');
