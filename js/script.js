@@ -2,11 +2,13 @@
 	WORKING VERSION
 */
 
-var players = new Array(), displayQuestions = questions.slice(0), count = 0, playerCount = 0, gameStarted = false;
+var players = new Array(), count = 0, playerCount = 0, gameStarted = false;
 
 // Set listeners 
 $(document).ready(function() {
-	checkList();
+	questions = fullQuestions;
+	displayQuestions = questions.slice(0)
+	//checkList();
 	$('#questionCount').text(displayQuestions.length + 1);
 
 	// Initial player creation listeners
@@ -51,7 +53,13 @@ $(document).ready(function() {
 function populateNames() {
 	$('.playerField').each(function(i){
 		if($(this).val() != '') {
-			players.push($(this).val());
+			if($(this).val() == "party" || $(this).val() == "Party") {
+				questions = partyQuestions;
+				displayQuestions = questions.slice(0);
+				$('#questionCount').text(displayQuestions.length + 1);
+			} else {
+				players.push($(this).val());
+			}
 			$(this).val('');
 		}
 	});
@@ -64,6 +72,8 @@ function startGame() {
 	populateNames();
 	updateRemovePlayers();
 
+	shuffleArray(questions);
+	shuffleArray(questions);
 	shuffleArray(questions);
     gameStarted = true;
 
@@ -176,7 +186,7 @@ function addQuestions() {
 		}
 	});
 
-	$('#questionCount').text(questions.length + 1);
+	$('#questionCount').text(displayQuestions.length + 1);
 	var current = $.featherlight.current()
 	current.close();
 }
