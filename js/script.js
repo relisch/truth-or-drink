@@ -33,6 +33,18 @@ $(document).ready(function() {
 		removePlayers();
 	});
 
+	$('#btnTruth').on('click', function(){
+		next();
+		$(this).attr('disabled',true);
+		setTimeout(function(){$('#btnTruth').attr('disabled', false)},1000);
+	});
+
+	$('#btnDrink').on('click', function(){
+		drink();
+		$(this).attr('disabled',true);
+		setTimeout(function(){$('#btnDrink').attr('disabled', false)},1000);
+	});
+
 	$('#btnShowQuestions').on('click', function(){
 		if($('#list').hasClass('hide')){
 			showQuestions();
