@@ -247,7 +247,7 @@ var fullQuestions =
 'touch your nose with your tongue. If you can\'t, touch mine',
 'put lipstick on me without using your hands',
 'poke someone you don’t know on Facebook',
-'put your hands in my pockets for seven turn',
+'put your hands in my pockets for seven turns',
 'get down on your knees and pray for the group',
 'wear your clothes in reverse order',
 'crack an egg on your head',

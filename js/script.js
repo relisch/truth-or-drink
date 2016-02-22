@@ -185,6 +185,7 @@ function addQuestions() {
 		if($(this).val()) {
 			if(!gameStarted) {
 				questions.push($(this).val());
+				displayQuestions.push($(this).val());
 			}
 			else {
 				var i = questions.length;
@@ -193,6 +194,7 @@ function addQuestions() {
 					j = Math.floor((Math.random() * i) + 1);
 				}
 				questions.splice(j,0,$(this).val());
+				displayQuestions.splice(j,0,$(this).val());
 				$(this).val('');
 			}
 		}
