@@ -1,6 +1,13 @@
 body {
 	font-family: 'Roboto', sans-serif;
 }
+
+#nameAlert {
+	width: 75%;
+	text-align: center;
+	margin: auto;
+	visibility: hidden;
+}
 #players,
 #addQuestions
 {

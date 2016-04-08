@@ -1,7 +1,3 @@
-/*	
-	WORKING VERSION
-*/
-
 var players = new Array(), count = 0, playerCount = 0, gameStarted = false;
 
 // Set listeners 
@@ -70,29 +66,65 @@ function populateNames() {
 				displayQuestions = questions.slice(0);
 				$('#questionCount').text(displayQuestions.length + 1);
 			} else {
-				players.push($(this).val());
+				if ($.inArray($(this).val(), players) == -1) {
+					players.push($(this).val());
+				} else {
+					players.push("nameError");
+				}
 			}
 			$(this).val('');
 		}
 	});
+	return true;
 }
 
+function logVisit() {
+	$.getJSON('http://ipinfo.io', function(data){
+		var org = data.org.substring(data.org.indexOf(' '));
+		console.log(data.city + ', ' + data.region + ' ' + data.country + ' ' + org);
+		var dataString = data.city + '|' + data.region + '|' + data.country + '|' + org;
+		var d = {func:"logVisit", a:"visit", data:dataString};
+		$.ajax({
+			type: "POST",
+			async: true,
+			cache:false,
+			url: "mid.php",
+			data: d,  
+			dataType: "json",
+			success: handleVisit,
+			error: handleVisit
+		});
+	});
+}
+
+function handleVisit(resp) {
+	console.log(resp);
+}
 // Change UI to show question screen
 function startGame() {
-	$('#people').addClass('hide');
-	$('.col-md-4').hide();
+	$('#nameAlert').css('visibility','hidden');
 	populateNames();
-	updateRemovePlayers();
+	if ($.inArray("nameError", players) == -1 && players.length > 1) {
+		logVisit();
+		$('#people').addClass('hide');
+		$('.col-md-4').hide();
+		updateRemovePlayers();
 
-	shuffleArray(questions);
-	shuffleArray(questions);
-	shuffleArray(questions);
-    gameStarted = true;
-
-    $('#question').removeClass('hide');
-    $('#btnAddPlayers').removeClass('hide');
-    $('#btnRemovePlayers').removeClass('hide');
-    next();
+		shuffleArray(questions);
+		shuffleArray(questions);
+		shuffleArray(questions);
+		gameStarted = true;
+	
+		$('#question').removeClass('hide');
+		$('#btnAddPlayers').removeClass('hide');
+		$('#btnRemovePlayers').removeClass('hide');
+		next();
+	} else {
+		console.log('blocked: ' + players.length + ' ' + players);
+		players = new Array();
+		$('#nameAlert').css('visibility','visible');
+	}
+	
 }
 
 // Add an input to the homepage to enter another player name
