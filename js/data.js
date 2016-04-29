@@ -287,7 +287,20 @@ var fullQuestions =
 'are you emotionally unavailable?',
 'is love forever?',
 'can a man and a woman ever just be friends?',
-'is money the root of all evil?'
+'is money the root of all evil?',
+'did you have better sex with your ex than your current partner?',
+'what was the most shameful thing you’ve ever done for sex?',
+'play a song by slapping your butt cheeks until someone guesses it correctly',
+'let the group pose you in any position and take a picture',
+'lick the floor',
+'let me shave/wax part of your body',
+'let me give you a new hairstyle and take a picture',
+'sniff everyone’s armpits',
+'make everyone in the group smile, don’t stop until everyone’s cracked',
+'try to juggle 2-3 items of the group’s choosing',
+'serenade the person to your left',
+'stick your arm in the trashcan past your elbow',
+'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots'
 ];
 
 var partyQuestions = 
@@ -395,4 +408,17 @@ var partyQuestions =
 'does size matter to you?',
 'what are bedroom nicknames that you use/have been given to you?',
 'what sex toy would you most like to receive as a gift?',
-'how old were you when you started being sexual?'];
+'how old were you when you started being sexual?',
+'did you have better sex with your ex than your current partner?',
+'what was the most shameful thing you’ve ever done for sex?',
+'play a song by slapping your butt cheeks until someone guesses it correctly',
+'let the group pose you in any position and take a picture',
+'lick the floor',
+'let me shave/wax part of your body',
+'let me give you a new hairstyle and take a picture',
+'sniff everyone’s armpits',
+'make everyone in the group smile, don’t stop until everyone’s cracked',
+'try to juggle 2-3 items of the group’s choosing',
+'serenade the person to your left',
+'stick your arm in the trashcan past your elbow',
+'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots'];

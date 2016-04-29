@@ -52,7 +52,11 @@ $(document).ready(function() {
 	});
 
 	$('#btnGo').on('click', function(){
-		startGame();
+		startGame(false);
+	});
+	
+	$('#btnParty').on('click', function(){
+		startGame(true);
 	});
 
 });
@@ -61,16 +65,10 @@ $(document).ready(function() {
 function populateNames() {
 	$('.playerField').each(function(i){
 		if($(this).val() != '') {
-			if($(this).val() == "party" || $(this).val() == "Party") {
-				questions = partyQuestions;
-				displayQuestions = questions.slice(0);
-				$('#questionCount').text(displayQuestions.length + 1);
+			if ($.inArray($(this).val(), players) == -1) {
+				players.push($(this).val());
 			} else {
-				if ($.inArray($(this).val(), players) == -1) {
-					players.push($(this).val());
-				} else {
-					players.push("nameError");
-				}
+				players.push("nameError");
 			}
 			$(this).val('');
 		}
@@ -101,14 +99,20 @@ function handleVisit(resp) {
 	console.log(resp);
 }
 // Change UI to show question screen
-function startGame() {
+function startGame(partyMode) {
 	$('#nameAlert').css('visibility','hidden');
+	
 	populateNames();
 	if ($.inArray("nameError", players) == -1 && players.length > 1) {
 		logVisit();
 		$('#people').addClass('hide');
 		$('.col-md-4').hide();
 		updateRemovePlayers();
+		if (partyMode) {
+			questions = partyQuestions;
+			displayQuestions = questions.slice(0);
+			$('#questionCount').text(displayQuestions.length + 1);
+		}
 
 		shuffleArray(questions);
 		shuffleArray(questions);
