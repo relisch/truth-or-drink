@@ -300,7 +300,23 @@ var fullQuestions =
 'try to juggle 2-3 items of the group’s choosing',
 'serenade the person to your left',
 'stick your arm in the trashcan past your elbow',
-'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots'
+'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots',
+
+'have you ever been to a sex store? Did you buy anything?',
+'top or bottom?',
+'what three words would you use to describe your sex life?',
+'if you woke up one day and realized that you were invisible, what would be the naughtiest thing you would do?',
+'what was the craziest place you have ever had sex?',
+'have you had sex with more than one person in the same day?',
+'what was the biggest sex toy you ever used?',
+'have you ever had phone sex?',
+'when was the last time someone saw you naked?',
+'if you could switch places with anyone for a day, who would it be and why?',
+'out of all of our friends, who do you think is the best in bed?',
+'have you had sex with someone without knowing their name?',
+'what\'s your idea of good foreplay?',
+'what color underwear are you wearing?',
+'moon the group!'
 ];
 
 var partyQuestions = 
@@ -421,4 +437,20 @@ var partyQuestions =
 'try to juggle 2-3 items of the group’s choosing',
 'serenade the person to your left',
 'stick your arm in the trashcan past your elbow',
-'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots'];
+'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots',
+
+'have you ever been to a sex store? Did you buy anything?',
+'top or bottom?',
+'what three words would you use to describe your sex life?',
+'if you woke up one day and realized that you were invisible, what would be the naughtiest thing you would do?',
+'what was the craziest place you have ever had sex?',
+'have you had sex with more than one person in the same day?',
+'what was the biggest sex toy you ever used?',
+'have you ever had phone sex?',
+'when was the last time someone saw you naked?',
+'if you could switch places with anyone for a day, who would it be and why?',
+'out of all of our friends, who do you think is the best in bed?',
+'have you had sex with someone without knowing their name?',
+'what\'s your idea of good foreplay?',
+'what color underwear are you wearing?',
+'moon the group!'];
