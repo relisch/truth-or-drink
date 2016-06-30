@@ -301,7 +301,6 @@ var fullQuestions =
 'serenade the person to your left',
 'stick your arm in the trashcan past your elbow',
 'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots',
-
 'have you ever been to a sex store? Did you buy anything?',
 'top or bottom?',
 'what three words would you use to describe your sex life?',
@@ -316,7 +315,11 @@ var fullQuestions =
 'have you had sex with someone without knowing their name?',
 'what\'s your idea of good foreplay?',
 'what color underwear are you wearing?',
-'moon the group!'
+'moon the group!',
+'who in this room would you most want to kiss?',
+'have you ever farted while having sex?',
+'have you ever said the wrong name during sex and how did you try and cover it up?',
+'what is your favorite secret sexual pastime?'
 ];
 
 var partyQuestions = 
@@ -438,7 +441,6 @@ var partyQuestions =
 'serenade the person to your left',
 'stick your arm in the trashcan past your elbow',
 'initiate a game of Never Have I Ever. If you’re the first one out, you have to take two shots',
-
 'have you ever been to a sex store? Did you buy anything?',
 'top or bottom?',
 'what three words would you use to describe your sex life?',
@@ -453,4 +455,8 @@ var partyQuestions =
 'have you had sex with someone without knowing their name?',
 'what\'s your idea of good foreplay?',
 'what color underwear are you wearing?',
-'moon the group!'];
+'moon the group!',
+'who in this room would you most want to kiss?',
+'have you ever farted while having sex?',
+'have you ever said the wrong name during sex and how did you try and cover it up?',
+'what is your favorite secret sexual pastime?'];
